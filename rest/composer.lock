@@ -1,0 +1,112 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "99d6a7c2fc845be7e96d0a90bf8e19f8",
+    "packages": [
+        {
+            "name": "helium-mvc/helium",
+            "version": "0.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Helium-MVC/Helium.git",
+                "reference": "f70be22d9414cf200a164e0e58c14b4bd65c5dcc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Helium-MVC/Helium/zipball/f70be22d9414cf200a164e0e58c14b4bd65c5dcc",
+                "reference": "f70be22d9414cf200a164e0e58c14b4bd65c5dcc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "prodigyview\\helium\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Devin Dixon",
+                    "email": "ddixon@bingewave.com",
+                    "homepage": "http://www.bingewave.com",
+                    "role": "Entrepreneur & Developer"
+                }
+            ],
+            "description": "The Development Framework For Startups",
+            "homepage": "https://github.com/Helium-MVC/Helium",
+            "keywords": [
+                "framework",
+                "mvc",
+                "php"
+            ],
+            "time": "2019-01-01T18:02:14+00:00"
+        },
+        {
+            "name": "prodigyview/prodigyview",
+            "version": "0.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ProdigyView-Toolkit/prodigyview.git",
+                "reference": "49a626b5b1928fa42a89f53a53c67ff366c9b067"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ProdigyView-Toolkit/prodigyview/zipball/49a626b5b1928fa42a89f53a53c67ff366c9b067",
+                "reference": "49a626b5b1928fa42a89f53a53c67ff366c9b067",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "^6.3",
+                "phpunit/php-code-coverage": "^6.1",
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "prodigyview\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Devin Dixon",
+                    "email": "ddixon@prodigyview.com",
+                    "homepage": "http://www.prodigyview.com",
+                    "role": "Entrepreneur & Developer"
+                }
+            ],
+            "description": "Complete PHP Toolkit",
+            "homepage": "https://github.com/ProdigyView-Toolkit/prodigyview",
+            "keywords": [
+                "mvc",
+                "php"
+            ],
+            "time": "2019-01-01T17:44:17+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^7.0.0"
+    },
+    "platform-dev": []
+}

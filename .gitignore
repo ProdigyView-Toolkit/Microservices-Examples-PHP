@@ -1,0 +1,6 @@
+email/vendor/*
+rest/vendor/*
+video/vendor/*
+.DS_STORE
+.settings
+.project

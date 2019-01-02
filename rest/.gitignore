@@ -1,0 +1,5 @@
+data/*
+vendor/*
+app/config/config.php
+.settings
+.DS_STORE

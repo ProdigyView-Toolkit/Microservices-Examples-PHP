@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<project name="Site 1 Compiler" basedir="../public_html/" default="compile">
+
+  <target name="-js.compile">
+    <taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask" classpath="../../app/build/compiler.jar"/>
+    <jscomp compilationLevel="simple" languageIn="ECMASCRIPT6" warning="verbose" debug="true" output="${basedir}/js/scripts.js">
+	  
+	  <sources dir="${basedir}/js/">
+      	<file name="exports.js"/>
+      </sources>
+      
+      <sources dir="${basedir}/js/libs/">
+      	<file name="vue/vue.runtime.js"/>
+        <file name="vue-croppa.min.js"/>
+        <file name="axios/axios.js"/>
+        <file name="vue-axios.min.js"/>
+        <file name="vue-mce.js"/>
+      </sources>
+
+    </jscomp>
+
+  </target>
+  
+  <target name="-css.concatenate" description="Concatenates specified CSS files">
+    <concat destfile="${basedir}/css/main.concat.css">
+      <!--first.css and second.css should be first in the concatenated file-->
+      <filelist
+      dir="${basedir}/css/"
+      files="clean-blog.css, custom.css"/>
+    </concat>
+    <echo>Finished</echo>
+  </target>
+  
+  <target name="-css.minify" depends="-css.concatenate" 
+        description="Minifies CSS files">
+        <apply executable="java" parallel="false"  dest="${basedir}/css/">
+            <fileset dir="${basedir}/css/" includes="main.concat.css"/>
+            <arg line="-jar"/>
+            <arg path="../../app/build/yuicompressor-2.4.8.jar"/>
+            <srcfile/>
+            <arg line="-o"/>
+            <mapper type="glob" from="*.concat.css" to="*.min.css"/>
+            <targetfile/>
+        </apply>
+        <echo>Finished</echo>
+    </target>
+  
+  
+  <target name="compile" 
+        description="Builds project files for production use"
+        depends="
+            -js.compile,
+            -css.concatenate,
+            -css.minify
+            ">
+    </target>
+
+</project>
