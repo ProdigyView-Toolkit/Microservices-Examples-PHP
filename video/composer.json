@@ -13,8 +13,5 @@
     "require": {
         "prodigyview/prodigyview": "^0.9.0",
         "php-amqplib/php-amqplib": "v2.8.1"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^7"
     }
 }
