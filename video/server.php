@@ -10,7 +10,7 @@ use PhpAmqpLib\Connection\AMQPStreamConnection;
 $connection = new AMQPStreamConnection('127.0.0.1', 5672, 'guest', 'guest');
 $channel = $connection->channel();
 
-$channel->queue_declare('video_processing', false, false, false, false);
+$channel->queue_declare('video_queue', false, false, false, false);
 
 /**
  * Define the callback function
@@ -42,7 +42,7 @@ $callback = function($msg) {
 };
 
 //Pass the callback
-$channel->basic_consume('hello', '', false, true, false, false, $callback);
+$channel->basic_consume('video_queue', '', false, true, false, false, $callback);
 
 //Listen to requests
 while (count($channel->callbacks)) {

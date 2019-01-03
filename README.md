@@ -39,5 +39,20 @@ This tutorial will demonstrate how to create a basic REST api for processing CRU
 5. In the other tab, run `php client.php`
 
 
+## Organizing Access To Microservices
+#### Overview
+This section will show how to organize and manage multiple microservices. The past 3 examples have been combined into one, with the addition of sending pushing notifications and image processing. The goal is to give each service their own resources, and organize calling them via REST API.
+
+#### How To Run
+We will need **four** tabs to effectively run this example.
+
+1. Start your RabbitMQ Server
+2. Go the the `multiple` folder
+3. Run `composer install` to install required packages
+4. Have your four tabs open to this folder
+5. Start the webserver with ``
+6. Start the notifiction server with `php servers/notification_server.php`
+7. Start the media server with `php media_server.php`
+8. Execute the tests by running `php client.php`
 
 
