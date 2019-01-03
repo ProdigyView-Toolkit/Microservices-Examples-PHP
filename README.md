@@ -50,9 +50,9 @@ We will need **four** tabs to effectively run this example.
 2. Go the the `multiple` folder
 3. Run `composer install` to install required packages
 4. Have your four tabs open to this folder
-5. Start the webserver with ``
-6. Start the notifiction server with `php servers/notification_server.php`
-7. Start the media server with `php media_server.php`
-8. Execute the tests by running `php client.php`
+5. Start the webserver with `php -S 127.0.0.1:8090` in one tab
+6. Start the notifiction server with `php servers/notification_server.php` in the 2nd tab
+7. Start the media server with `php media_server.php` in the 3rd tab
+8. Execute the tests by running `php client.php` in the last tab
 
 
