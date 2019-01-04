@@ -1,3 +1,4 @@
+static_test/vendor/*
 email/vendor/*
 rest/vendor/*
 video/vendor/*

@@ -8,6 +8,7 @@ use PhpAmqpLib\Message\AMQPMessage;
 $connection = new AMQPStreamConnection('localhost', 5672, 'guest', 'guest');
 $channel = $connection->channel();
 
+//Create the queue
 $channel->queue_declare('video_queue', 	//$queue - Either sets the queue or creates it if not exist
 						false,			//$passive - Do not modify the servers state
 						true,			//$durable - Data will persist if crash or restart occurs
