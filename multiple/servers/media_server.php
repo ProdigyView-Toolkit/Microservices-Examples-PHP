@@ -55,7 +55,7 @@ $channel->basic_consume('video_processing', '', false, false, false, false, func
 /**
  * Execute The Callback For Image Processing
  */
-$channel->basic_consume('image_processing', '', false, true, false, false, function($msg) {
+$channel->basic_consume('image_processing', '', false, false, false, false, function($msg) {
 	//Convert the data to array
 	
 	$data = json_decode($msg->body, true);
