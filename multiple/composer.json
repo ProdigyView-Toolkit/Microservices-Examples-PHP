@@ -11,8 +11,9 @@
     "minimum-stability" : "dev",
     "prefer-stable": true,
     "require": {
-        "prodigyview/prodigyview": "^0.9.0",
+        "prodigyview/prodigyview": "dev-master",
         "phpmailer/phpmailer": "^6.0",
-        "php-amqplib/php-amqplib": "v2.8.1"
+        "php-amqplib/php-amqplib": "v2.8.1",
+        "aws/aws-sdk-php": "^3.52"
     }
 }

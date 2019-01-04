@@ -1,5 +1,4 @@
 <?php
-
 include ('vendor/autoload.php');
 
 use prodigyview\network\Curl;
@@ -34,7 +33,6 @@ echo "\n\n";
 //Attempts To Send Push Notification
 $curl = new Curl($notifications_route);
 $curl->send('put', array(
-	'to' => 'Jane Doe',
 	'payload' => array('type'=>'pop_up', 'message'=> 'Hello World'),
 	'device_token' => 'abc123',
 ));
@@ -52,11 +50,11 @@ echo $curl->getResponse();
 echo "\n\n";
 
 
-//Send Image To Be Processed
+//Send Video To Be Processed
 $curl = new Curl($media_route);
 $curl->send('post', array(
 	'url' => 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_20mb.mp4',
-	'to' => 'mov',
+	'convert_to' => 'mov',
  ));
 echo $curl->getResponse();
 echo "\n\n";

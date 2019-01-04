@@ -10,7 +10,12 @@ use PhpAmqpLib\Connection\AMQPStreamConnection;
 $connection = new AMQPStreamConnection('127.0.0.1', 5672, 'guest', 'guest');
 $channel = $connection->channel();
 
-$channel->queue_declare('video_queue', false, false, false, false);
+$channel->queue_declare('video_queue', 	//$queue - Either sets the queue or creates it if not exist
+						false,			//$passive - Do not modify the servers state
+						true,			//$durable - Data will persist if crash or restart occurs
+						false,			//$exclusive - Only one connection will usee, and deleted when closed
+						false			//$auto_delete - Queue is deleted when consumer is no longer subscribes
+						);
 
 /**
  * Define the callback function
@@ -25,7 +30,7 @@ $callback = function($msg) {
 
 	if ($wget_exist) {
 		//Use wget to download the video.
-		exec("wget {$data['video_url']} -O video.mp4");
+		exec("wget -O video.mp4 {$data['video_url']}");
 	} else {
 		//Use ProdigyView's FileManager as backup
 		FileManager::copyFileFromUrl($data['video_url'], getcwd() . '/', 'video.mp4');

@@ -1,5 +1,4 @@
 <?php
-
 include (dirname(__FILE__).'/../vendor/autoload.php');
 
 use prodigyview\network\Request;
@@ -9,7 +8,7 @@ use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 use PhpAmqpLib\Channel\AMQPChannel;
 
-//Create And Process The Current Request
+//Process The Current HTTP Request
 $request = new Request();
 
 //Get The Request Method(GET, POST, PUT, DELETE)
@@ -23,9 +22,9 @@ $connection = new AMQPStreamConnection('localhost', 5672, 'guest', 'guest');
 $channel = $connection->channel();
 
 //Route The Requests
-if ($method == 'post') {
+if ($method === 'post') {
 	post($data, $channel);
-} else if ($method == 'put') {
+} else if ($method === 'put') {
 	parse_str($data,$data);
 	put($data, $channel);
 } else {
@@ -38,7 +37,7 @@ if ($method == 'post') {
  */
 function post(array $data = array(), AMQPChannel $channel) {
 	$queue = 'video_processing';
-	$channel->queue_declare($queue, false, false, false, false);
+	$channel->queue_declare($queue, false, true, false, false);
 	send(json_encode($data), $channel, $queue);
 }
 
@@ -47,7 +46,7 @@ function post(array $data = array(), AMQPChannel $channel) {
  */
 function put(array $data = array(), AMQPChannel $channel) {
 	$queue = 'image_processing';
-	$channel->queue_declare($queue, false, false, false, false);
+	$channel->queue_declare($queue, false, true, false, false);
 	send(json_encode($data),$channel, $queue);
 }
 
@@ -57,13 +56,8 @@ function put(array $data = array(), AMQPChannel $channel) {
 function send(string $message, AMQPChannel $channel, string $queue) {
 	global $connection;
 	
-	$msg = new AMQPMessage($message);
+	$msg = new AMQPMessage($message, array('delivery_mode' => AMQPMessage::DELIVERY_MODE_PERSISTENT));
 	$channel->basic_publish($msg, '', $queue);
 	$channel->close();
 	$connection->close();
 }
-
-
-
-
-echo "Sent Media To Server!'\n";

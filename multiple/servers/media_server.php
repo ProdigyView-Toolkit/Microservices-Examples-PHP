@@ -1,5 +1,4 @@
 <?php
-
 include (dirname(__FILE__) . '/../vendor/autoload.php');
 
 use prodigyview\media\Video;
@@ -8,25 +7,30 @@ use prodigyview\util\FileManager;
 use prodigyview\util\Validator;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 
+use Aws\S3\S3Client;
+use Aws\Common\Credentials\Credentials;
+use Aws\S3\MultipartUploader;
+use Aws\Exception\MultipartUploadException;
+
 //Start RabbitMQ Server
 $connection = new AMQPStreamConnection('127.0.0.1', 5672, 'guest', 'guest');
 $channel = $connection->channel();
 
 //Create The Queues to listen too
-$channel->queue_declare('video_processing', false, false, false, false);
-$channel->queue_declare('image_processing', false, false, false, false);
+$channel->queue_declare('video_processing', false, true, false, false);
+$channel->queue_declare('image_processing', false, true, false, false);
 
 
 /**
  * Execute the callback for video processing
  */
-$channel->basic_consume('video_processing', '', false, true, false, false, function($msg) {
+$channel->basic_consume('video_processing', '', false, false, false, false, function($msg) {
 	//Convert the data to array
 	$data = json_decode($msg->body, true);
 
 	if ($file = download_file($data['url'])) {
 		
-		echo "Converting Image....\n";
+		echo "Converting Video....\n";
 
 		//Rename file with extension
 		$new_file = $file . getExtenstion($file);
@@ -40,6 +44,9 @@ $channel->basic_consume('video_processing', '', false, true, false, false, funct
 		} else {
 			echo "Sorry No Conversion Software Exist On Server\n";
 		}
+		
+		//Upload to Cloud
+		//uploadToStorage($new_file);
 	}
 
 	echo "Finished Converting Video\n";
@@ -69,6 +76,8 @@ $channel->basic_consume('image_processing', '', false, true, false, false, funct
 			Image::resizeImageGD($new_file, $new_file, 200,  200);
 		}
 		
+		//Upload to Cloud
+		//uploadToStorage($new_file);
 
 	}
 
@@ -140,6 +149,36 @@ function getExtenstion(string $file) {
 	}
 	
 	return $extension;
+}
+
+/**
+ * Upload the file to AmazonS3
+ */
+function uploadToStorage(string $file) {
+	
+	$s3 = S3Client::factory(array(
+		'credentials' => array(
+			'secret' => '<secret>',
+			'key' => '<key>'
+		),
+		'region' => 'us-west-2',
+		'version' => '2006-03-01',
+		'timeout' => 12000,
+	));
+	
+	//Upload in Chunks, not the whole file
+	$uploader = new MultipartUploader($s3, $body, [
+		'bucket' => '<bucket>',
+		'key'    => $file,
+		'acl'    => 'public-read',
+		'concurrency' => 2,
+		'part_size' => (50 * 1024 * 1024),
+	]);
+								
+	$result = $uploader->upload();
+	
+	return (isset($result['Location'])) ? $result['Location'] : false;
+	
 }
 
 //Listen to requests

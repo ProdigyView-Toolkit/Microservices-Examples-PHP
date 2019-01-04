@@ -1,5 +1,4 @@
 <?php
-
 include (dirname(__FILE__).'/../vendor/autoload.php');
 
 use prodigyview\network\Socket;
@@ -20,9 +19,9 @@ $data = $request->getRequestData('array');
 $socket = getSocket();
 
 //Route The Methods
-if ($method == 'post') {
+if ($method === 'post') {
 	post($data, $socket);
-} else if ($method == 'put') {
+} else if ($method === 'put') {
 	parse_str($data,$data);
 	put($data, $socket);
 } else {

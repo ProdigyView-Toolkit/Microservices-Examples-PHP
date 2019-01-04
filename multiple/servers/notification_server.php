@@ -61,7 +61,6 @@ class PushNotification {
 		$curl->addHeader('Content-Type', 'application/json');
 		
 		$curl->send('post', array(
-			'to' => $data['device_token'],
 			'notification' => json_encode($data['payload']),
 			'priority' => 10
 		));

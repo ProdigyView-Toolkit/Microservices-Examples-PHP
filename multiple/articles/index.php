@@ -1,5 +1,4 @@
 <?php
-
 include (dirname(__FILE__).'/../vendor/autoload.php');
 
 use prodigyview\network\Request;
@@ -22,14 +21,14 @@ $method = strtolower($request->getRequestMethod());
 $data = $request->getRequestData('array');
 
 //Route The Request
-if ($method == 'get') {
+if ($method === 'get') {
 	get($data);
-} else if ($method == 'post') {
+} else if ($method === 'post') {
 	post($data);
-} else if ($method == 'put') {
+} else if ($method === 'put') {
 	parse_str($data,$data);
 	put($data);
-} else if ($method == 'delete') {
+} else if ($method === 'delete') {
 	parse_str($data,$data);
 	delete($data);
 }
@@ -37,7 +36,7 @@ if ($method == 'get') {
 /**
  * Process all GET data to find information
  */
-function get($data) {
+function get(array $data = array()) {
 	global $articles;
 	
 	$response  = array();
@@ -55,7 +54,7 @@ function get($data) {
 /**
  * Process all POST data to create data
  */
-function post($data) {
+function post(array $data = array()) {
 	global $articles;
 	
 	$response  = array();
@@ -75,7 +74,7 @@ function post($data) {
 /**
  * Process all PUT data to update information
  */
-function put($data) {
+function put(array $data = array()) {
 	global $articles;
 	
 	$response  = array();
@@ -101,7 +100,7 @@ function put($data) {
 /**
  * Process DELETE to remove data
  */
-function delete($data) {
+function delete(array $data = array()) {
 	global $articles;
 	
 	$response  = array();
