@@ -4,7 +4,7 @@ This is a repo of example MicroServices using PHP. Areas of topics will include:
 - RabbitMQ Example
 - RESTFUL Example
 
-#### Requirements To Run Text
+#### Requirements To Run Test
 1. Composer
 2. PHP7
 
