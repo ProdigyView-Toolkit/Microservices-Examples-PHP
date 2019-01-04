@@ -43,6 +43,8 @@ This tutorial will demonstrate how to create a basic REST api for processing CRU
 #### Overview
 This section will show how to organize and manage multiple microservices. The past 3 examples have been combined into one, with the addition of sending pushing notifications and image processing. The goal is to give each service their own resources, and organize calling them via REST API.
 
+For detailed work through please read  [Organizing Access To Multiple Services](https://medium.com/helium-mvc/php-microservices-organizing-access-to-multiple-services-a841a4d639e1 "Organizing Access To Multiple Services").
+
 #### How To Run
 We will need **four** tabs to effectively run this example.
 
@@ -52,7 +54,7 @@ We will need **four** tabs to effectively run this example.
 4. Have your four tabs open to this folder
 5. Start the webserver with `php -S 127.0.0.1:8090` in one tab
 6. Start the notifiction server with `php servers/notification_server.php` in the 2nd tab
-7. Start the media server with `php media_server.php` in the 3rd tab
+7. Start the media server with `php servers/media_server.php` in the 3rd tab
 8. Execute the tests by running `php client.php` in the last tab
 
 
