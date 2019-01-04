@@ -4,6 +4,10 @@ This is a repo of example MicroServices using PHP. Areas of topics will include:
 - RabbitMQ Example
 - RESTFUL Example
 
+#### Requirements To Run Text
+1. Composer
+2. PHP7
+
 ## E-Mail and Socket Programming
 #### Overview
 The mail microservice uses basic socket communication between a socket server and service. For explanation, please read: [PHP Microservices — Send Emails Over Sockets](https://medium.com/@BlackMage1987/php-microservices-send-emails-over-sockets-977e9f8f3c3d "PHP Microservices — Send Emails Over Sockets")
