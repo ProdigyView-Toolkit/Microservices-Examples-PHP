@@ -11,6 +11,6 @@
     "minimum-stability" : "dev",
     "prefer-stable": true,
     "require": {
-        "prodigyview/prodigyview": "^0.9.0"
+        "prodigyview/prodigyview": "dev-master"
     }
 }

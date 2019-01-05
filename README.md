@@ -7,6 +7,7 @@ This is a repo of example MicroServices using PHP. Areas of topics will include:
 #### Requirements To Run Test
 1. Composer
 2. PHP7
+3. PHP Sockets Extensions Installed
 
 ## E-Mail and Socket Programming
 #### Overview
