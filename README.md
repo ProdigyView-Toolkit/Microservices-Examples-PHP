@@ -3,6 +3,8 @@ This is a repo of example MicroServices using PHP. Areas of topics will include:
 - Socket Programming
 - RabbitMQ Example
 - RESTFUL Example
+- Authentication and Authorization Example
+- Functional Programming Example
 
 #### Requirements To Run Test
 1. Composer
