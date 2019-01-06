@@ -12,7 +12,7 @@ $channel = $connection->channel();
 $channel->queue_declare('video_queue', 	//$queue - Either sets the queue or creates it if not exist
 						false,			//$passive - Do not modify the servers state
 						true,			//$durable - Data will persist if crash or restart occurs
-						false,			//$exclusive - Only one connection will usee, and deleted when closed
+						false,			//$exclusive - Only one connection will use queue, and deleted when closed
 						false			//$auto_delete - Queue is deleted when consumer is no longer subscribes
 						);
 

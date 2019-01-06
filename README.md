@@ -62,4 +62,18 @@ We will need **four** tabs to effectively run this example.
 7. Start the media server with `php servers/media_server.php` in the 3rd tab
 8. Execute the tests by running `php client.php` in the last tab
 
+## Authentication, Authorization, Functional Programming and Unit Tests
 
+#### Overview
+This part of the tutorials covers how to perform Authentication and Authroization between microservices. It also includes an additional information on how to do function programming and unit test.
+
+#### How To Run
+Running this example requires 4 tabs on your console.
+
+1. Go to the `security` folder.
+2. Run `composer install` to install required packages
+3. Make sure your 4 tabs are open in this directory
+4. Start the web server with `php -S 127.0.0.1:8000`
+5. Start the authentications server with `php authentication_service/server.php`
+6. Start the purhcase server with `php payment_server/server.php`
+7. Run the client with `php client.php` in the final tab

@@ -1,0 +1,17 @@
+{
+    "name": "microservices/email",
+    "description": "Email Microservice",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Devin Dixon",
+            "email": "ddixon@bingewave.com"
+        }
+    ],
+    "minimum-stability" : "dev",
+    "prefer-stable": true,
+    "require": {
+        "prodigyview/prodigyview": "dev-master",
+        "phpunit/phpunit": "^7"
+    }
+}

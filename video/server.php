@@ -1,5 +1,4 @@
 <?php
-
 include ('vendor/autoload.php');
 
 use prodigyview\media\Video;
@@ -47,7 +46,7 @@ $callback = function($msg) {
 };
 
 //Pass the callback
-$channel->basic_consume('video_queue', '', false, true, false, false, $callback);
+$channel->basic_consume('video_queue', '', false, false, false, false, $callback);
 
 //Listen to requests
 while (count($channel->callbacks)) {
