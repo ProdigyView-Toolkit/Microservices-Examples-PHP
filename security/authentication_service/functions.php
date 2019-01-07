@@ -113,8 +113,7 @@ function checkPrivileges(string $token, string $requested_privilege, array $toke
 		}
 		
 		return false;
-	}//end foreach
-	
+	}//end foreach	
 }
 
 /**

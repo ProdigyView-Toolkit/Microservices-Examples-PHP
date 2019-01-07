@@ -6,6 +6,8 @@ This is a repo of example MicroServices using PHP. Areas of topics will include:
 - Authentication and Authorization Example
 - Functional Programming Example
 
+Many of the examples use [ProdigyView Toolkit](https://github.com/ProdigyView-Toolkit/prodigyview "ProdigyView Toolkit") for development.
+
 #### Requirements To Run Test
 1. Composer
 2. PHP7
@@ -67,9 +69,11 @@ We will need **four** tabs to effectively run this example.
 ## Authentication, Authorization, Functional Programming and Unit Tests
 
 #### Overview
-This part of the tutorials covers how to perform Authentication and Authroization between microservices. It also includes an additional information on how to do function programming and unit test.
+This part of the tutorials covers how to perform Authentication and Authroization between microservices. It also includes an additional information on how to do function programming and unit test. Accompanying tutorial are as followings:
+* [Authentication And Authorization](https://medium.com/helium-mvc/php-microservices-authentication-and-authorization-fff02b231803 "Authentication And Authorization")
+* [Functional Programming and Unit Testing](https://medium.com/helium-mvc/php-microservices-functional-programming-and-unit-testing-2cdc09a86198 "Functional Programming and Unit Testing")
 
-#### How To Run
+#### How To Run Microservice
 Running this example requires 4 tabs on your console.
 
 1. Go to the `security` folder.
@@ -79,3 +83,8 @@ Running this example requires 4 tabs on your console.
 5. Start the authentications server with `php authentication_service/server.php`
 6. Start the purhcase server with `php payment_server/server.php`
 7. Run the client with `php client.php` in the final tab
+
+#### How To Run Tests
+1. Go to the `security` folder.
+2. Run `composer install` to install required packages
+3. Type `./vendor/bin/phpunit --bootstrap vendor/autoload.php tests/AuthenticationServerTest.php` for Authentication Tests.

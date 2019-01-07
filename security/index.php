@@ -24,7 +24,7 @@ Router::post('/products/purchase', array('callback'=>function(Request $request){
 		$data['type']='charge';
 		
 		//Send The Message
-		$result = sendToNotificationServer($data);
+		$result = sendToPurchaseService($data);
 
 		//Create a response from the microservice
 		$response = array('status' => $result);
@@ -47,7 +47,7 @@ Router::post('/products/refund', array('callback'=>function(Request $request){
 		$data['type']='refund';
 		
 		//Send The Message
-		$result = sendToNotificationServer($data);
+		$result = sendToPurchaseService($data);
 
 		//Create a response from the microservice
 		$response = array('status' => $result);
@@ -75,7 +75,7 @@ function getSocket() {
 /**
  * Send the message to microservice
  */
-function sendToNotificationServer(array $message) {
+function sendToPurchaseService(array $message) {
 	
 	//Get the token and attached to message
 	$token = AuthBearer::getToken('user1', 'abc123');
