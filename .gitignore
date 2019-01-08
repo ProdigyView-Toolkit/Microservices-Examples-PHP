@@ -4,6 +4,7 @@ rest/vendor/*
 video/vendor/*
 multiple/vendor/*
 security/vendor/*
+socket_vs_http/vendor/*
 .DS_STORE
 .settings
 .project

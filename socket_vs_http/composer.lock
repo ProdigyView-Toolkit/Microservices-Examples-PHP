@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ce302282131aa19e7a7749fda1a24df",
+    "content-hash": "47ba22966b0aad2e6368fc0e21018347",
     "packages": [
         {
             "name": "prodigyview/prodigyview",
-            "version": "0.9.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ProdigyView-Toolkit/prodigyview.git",
-                "reference": "aa7e4adfbc70656c3ffb6f46b378b5dab3b5348a"
+                "reference": "77f726149374f49e5c8ea460dd5eb18da7189f3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ProdigyView-Toolkit/prodigyview/zipball/aa7e4adfbc70656c3ffb6f46b378b5dab3b5348a",
-                "reference": "aa7e4adfbc70656c3ffb6f46b378b5dab3b5348a",
+                "url": "https://api.github.com/repos/ProdigyView-Toolkit/prodigyview/zipball/77f726149374f49e5c8ea460dd5eb18da7189f3a",
+                "reference": "77f726149374f49e5c8ea460dd5eb18da7189f3a",
                 "shasum": ""
             },
             "require": {
@@ -52,13 +52,15 @@
                 "mvc",
                 "php"
             ],
-            "time": "2019-01-02T04:56:57+00:00"
+            "time": "2019-01-06T20:12:56+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "prodigyview/prodigyview": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

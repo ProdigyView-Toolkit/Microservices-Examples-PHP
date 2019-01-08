@@ -73,7 +73,7 @@ This part of the tutorials covers how to perform Authentication and Authroizatio
 * [Authentication And Authorization](https://medium.com/helium-mvc/php-microservices-authentication-and-authorization-fff02b231803 "Authentication And Authorization")
 * [Functional Programming and Unit Testing](https://medium.com/helium-mvc/php-microservices-functional-programming-and-unit-testing-2cdc09a86198 "Functional Programming and Unit Testing")
 
-#### How To Run Microservice
+#### How To Run The Microservice
 Running this example requires 4 tabs on your console.
 
 1. Go to the `security` folder.
@@ -88,3 +88,17 @@ Running this example requires 4 tabs on your console.
 1. Go to the `security` folder.
 2. Run `composer install` to install required packages
 3. Type `./vendor/bin/phpunit --bootstrap vendor/autoload.php tests/AuthenticationServerTest.php` for Authentication Tests.
+
+## Socket vs HTTP Performance
+#### Overview
+This tutorial and test will bring you through comparing the performance of a RESTFUL API vs Sockets.
+
+#### How To Run
+This test will require that 3 tabs open.
+1. Go to the `socket_vs_http` folder.
+2. Run `composer install` to install required packages
+3. Have your 3 tabs open
+4. In your first tab, start the web server with `php -S 127.0.0.1:8000 -t http_server/`
+5. In the second tab, start the socket with `php socket_server/server.php`
+6. In the final tab, run the client with `php client.php`
+
