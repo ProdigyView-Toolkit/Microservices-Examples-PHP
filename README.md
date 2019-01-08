@@ -91,7 +91,7 @@ Running this example requires 4 tabs on your console.
 
 ## Socket vs HTTP Performance
 #### Overview
-This tutorial and test will bring you through comparing the performance of a RESTFUL API vs Sockets.
+This tutorial and test will bring you through comparing the performance of a RESTFUL API vs Sockets. You may read along about the tests here: [REST vs Socket Performance Benchmarks](https://medium.com/helium-mvc/php-microservices-rest-vs-socket-performance-benchmarks-64d271900ca5 "REST vs Socket Performance Benchmarks")
 
 #### How To Run
 This test will require that 3 tabs open.
