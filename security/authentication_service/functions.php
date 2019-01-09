@@ -9,15 +9,21 @@
  * 
  * @return mixed Either returns the ID of the user, otherwise false
  */
-function authenticate(string $login, string $password, array $logins) {
+function authenticate(string $login, string $password, array $logins, int $index = 1) {
 	
-	foreach($logins as $key => $value) {
-		if($login = $value['login'] && $password == $value['password']) {
-			return $key;
-		}
-	}//end foreach
+	$array_size = count($logins);
 	
-	return false;
+	if($index >= $array_size) {
+		return false;
+	}
+	
+	$account = $logins[$index];
+	
+	if($login = $account['login'] && $password == $account['password']) {
+		return $index;
+	}
+	
+	return authenticate($login, $password, $logins, $index + 1);
 }
 
 /**
