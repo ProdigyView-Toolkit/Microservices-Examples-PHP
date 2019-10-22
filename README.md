@@ -62,14 +62,14 @@ We will need **four** tabs to effectively run this example.
 3. Run `composer install` to install required packages
 4. Have your four tabs open to this folder
 5. Start the webserver with `php -S 127.0.0.1:8090` in one tab
-6. Start the notifiction server with `php servers/notification_server.php` in the 2nd tab
+6. Start the notification server with `php servers/notification_server.php` in the 2nd tab
 7. Start the media server with `php servers/media_server.php` in the 3rd tab
 8. Execute the tests by running `php client.php` in the last tab
 
 ## Authentication, Authorization, Functional Programming and Unit Tests
 
 #### Overview
-This part of the tutorials covers how to perform Authentication and Authroization between microservices. It also includes an additional information on how to do function programming and unit test. Accompanying tutorial are as followings:
+This part of the tutorials covers how to perform Authentication and Authorization between microservices. It also includes an additional information on how to do function programming and unit test. Accompanying tutorial are as followings:
 * [Authentication And Authorization](https://medium.com/helium-mvc/php-microservices-authentication-and-authorization-fff02b231803 "Authentication And Authorization")
 * [Functional Programming and Unit Testing](https://medium.com/helium-mvc/php-microservices-functional-programming-and-unit-testing-2cdc09a86198 "Functional Programming and Unit Testing")
 
@@ -81,7 +81,7 @@ Running this example requires 4 tabs on your console.
 3. Make sure your 4 tabs are open in this directory
 4. Start the web server with `php -S 127.0.0.1:8000`
 5. Start the authentications server with `php authentication_service/server.php`
-6. Start the purhcase server with `php payment_server/server.php`
+6. Start the purchase server with `php payment_server/server.php`
 7. Run the client with `php client.php` in the final tab
 
 #### How To Run Tests
